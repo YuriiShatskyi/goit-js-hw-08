@@ -1,5 +1,7 @@
 import throttle from 'lodash.throttle'
 
+const STORAGE_KEY = 'feedback-form-state';
+
 const refs = { 
     form: document.querySelector(".feedback-form"),
     textarea: document.querySelector(".feedback-form textarea"),
@@ -31,7 +33,7 @@ function formDataInput(evt) {
 function onTextareaInput(evt) {
     const message = evt.target.value;
     
-    localStorage.setItem("feedback-form-state", message);
+    localStorage.setItem(STORAGE_KEY, message);
     
 }
 
